@@ -1,26 +1,14 @@
 package Programemers.lv0;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Basic {
     public static void main(String[] args) {
-        int[] array = {1,8,3};
-        List<Integer> collect = Arrays.stream(array)
-                .boxed()
-                .collect(Collectors.toList());
-        int max = Integer.MIN_VALUE;
-        int index = 0;
-        for (Integer i : collect) {
-            if (max < i) {
-                max = i;
-                index = collect.indexOf(i);
-            }
-        }
-        System.out.println(max);
-        System.out.println(index);
+
     }
 }
 
@@ -446,6 +434,21 @@ class Solution {
         }
         int[] answer = {max, index};
         return answer;
+    }
+}*/
+
+//n의 배수 고르기
+/*import java.util.*;
+  import java.util.stream.*;
+
+class Solution {
+    public int[] solution(int n, int[] numlist) {
+        ArrayList<Integer> list = new ArrayList<>();
+        for(Integer i : numlist) {
+            if(i % n == 0) list.add(i);
+        }
+        int[] array = list.stream().mapToInt(i -> i).toArray();
+        return array;
     }
 }*/
 
