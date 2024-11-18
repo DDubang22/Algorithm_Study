@@ -1,14 +1,9 @@
 package Programemers.lv0;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class Basic {
     public static void main(String[] args) {
-
     }
 }
 
@@ -452,4 +447,40 @@ class Solution {
     }
 }*/
 
+//순서쌍의 개수
+/*import java.util.*;
+
+class Solution {
+    public int solution(int n) {
+        ArrayList<Integer> list = new ArrayList<>();
+        for(int i = 1; i <= n; i++)
+            if(n % i == 0)
+                list.add(i);
+
+        return list.size();
+    }
+}*/
+
+//문자 반복 출력하기
+/*class Solution {
+    public String solution(String my_string, int n) {
+        StringBuilder sb = new StringBuilder();
+
+        String[] result = my_string.split("");
+        for(String s : result)
+            sb.append(s.repeat(n));
+
+        return sb.toString();
+    }
+}*/
+
+//점의 위치 구하기
+//class Solution {
+//    public int solution(int[] dot) {
+//        if(dot[0] > 0)
+//            return dot[1] > 0 ? 1 : 4;
+//        else
+//            return dot[1] < 0 ? 3 : 2;
+//    }
+//}
 
