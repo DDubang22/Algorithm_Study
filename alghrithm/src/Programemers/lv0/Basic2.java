@@ -4,16 +4,7 @@ import java.util.*;
 
 public class Basic2 {
     public static void main(String[] args) {
-        int num1 = 1;
-        int num2 = 2;
-        String str = "hello";
-        char[] charArray = str.toCharArray();
-        char c1 = str.charAt(num1);
-        char c2 = str.charAt(num2);
-        charArray[num1] = c2;
-        charArray[num2] = c1;
-        String s = new String(charArray);
-        System.out.println(s);
+
     }
 }
 
@@ -208,5 +199,114 @@ class Solution {
         charArray[num2] = c1;
 
         return new String(charArray);
+    }
+}*/
+
+//약수 구하기
+/*class Solution {
+    public int[] solution(int n) {
+        int sqrt = (int)Math.sqrt(n);
+
+        ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+        HashSet<Integer> set = new HashSet<>();
+
+        while (sqrt != 0) {
+            if(n % sqrt == 0) list.add(sqrt);
+            sqrt--;
+        }
+
+        for (Integer integer : list)
+            list2.add(n / integer);
+
+        set.addAll(list);
+        set.addAll(list2);
+
+        ArrayList<Integer> result = new ArrayList<>(set);
+        Collections.sort(result);
+
+        int[] array = result.stream().mapToInt(Integer::intValue).toArray();
+
+        return array;
+    }
+
+==== 다른 정답 풀이
+class Solution {
+    public int[] solution(int n) {
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for(int i = 1 ; i<= n; i++) {
+            if(n % i == 0)
+                list.add(i);
+        }
+        return list.stream().mapToInt(i -> i).toArray();
+    }
+}
+
+ps.
+
+내가 너무 어렵게 푼거 같다
+약수 구하는 것에 대한 개념이 뭔가 부족한거 같다..
+
+}*/
+
+//합성수 구하기
+/*class Solution {
+    public int solution(int n) {
+        int count = 0;
+        int answer = 0;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    count++;
+                }
+            }
+            if(count >= 3) answer++;
+            count = 0;
+        }
+
+        return answer;
+    }
+}*/
+
+//외계행성의 나이
+/*class Solution {
+    public String solution(int age) {
+        Map<String, String> map = new HashMap<>();
+        StringBuilder sb = new StringBuilder();
+        map.put("0","a");
+        map.put("1","b");
+        map.put("2","c");
+        map.put("3","d");
+        map.put("4","e");
+        map.put("5","f");
+        map.put("6","g");
+        map.put("7","h");
+        map.put("8","i");
+        map.put("9","j");
+
+        String[] result = String.valueOf(age).split("");
+        for (String s : result) {
+            if (map.containsKey(s)) {
+                sb.append(map.get(s));
+            }
+        }
+        return sb.toString();
+    }
+}*/
+
+//팩토리얼
+/*
+class Solution {
+    public int solution(int n) {
+        int sum = 1;
+        int i = 0;
+
+        while (sum <= n) {
+            i++;
+            sum *= i;
+        }
+        return i-1;
     }
 }*/
