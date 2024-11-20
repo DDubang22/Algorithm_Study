@@ -2,11 +2,12 @@ package Programemers.lv0;
 
 import java.util.*;
 
+
 public class Basic2 {
     public static void main(String[] args) {
-
     }
 }
+
 
 //특정 문자 제거하기
 /*
@@ -310,3 +311,137 @@ class Solution {
         return i-1;
     }
 }*/
+
+//k의 개수(답지봄)
+/*class Solution {
+    public int solution(int i, int j, int k) {
+        int count = 0;
+
+        for(; i <=j; i++) {
+            int n = i;
+
+            while(n > 0) {
+                if(n % 10 == k) {
+                    count++;
+                }
+                n /= 10;
+            }
+        }
+        return count;
+    }
+}*/
+
+//중복된 문자 제거
+/*class Solution {
+    public String solution(String my_string) {
+        ArrayList<String> list = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+
+        String[] result = my_string.split("");
+
+        for(String s : result) {
+            if(!list.contains(s)) {
+                list.add(s);
+            }
+        }
+
+        for(String s : list) {
+            sb.append(s);
+        }
+
+        return sb.toString();
+    }
+}*/
+
+//문자열 정렬하기(2)
+/*
+class Solution {
+    public String solution(String my_string) {
+        String lowerStr = my_string.toLowerCase();
+        StringBuilder sb = new StringBuilder();
+
+        char[] charArray = lowerStr.toCharArray();
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for(char c : charArray) list.add((int) c);
+
+        Collections.sort(list);
+
+        for(Integer i : list) {
+            char ch = (char) i.intValue();
+            sb.append(ch);
+        }
+
+        return sb.toString();
+    }
+
+===
+class Solution {
+    public String solution(String my_string) {
+        char[] c = my_string.toLowerCase().toCharArray();
+        Arrays.sort(c);
+        return new String(c);
+    }
+}
+}*/
+
+//가까운 수
+/*class Solution {
+    public int solution(int[] array, int n) {
+        int distance;
+        int shortDistance = 100;
+        int shortTarget = 0;
+
+        Arrays.sort(array);
+
+        for (int i : array) {
+            distance = Math.abs(n - i);
+            if (distance < shortDistance) {
+                shortDistance = distance;
+                shortTarget = i;
+            } else {
+                if (shortTarget != i) {
+                    shortTarget = Math.min(shortTarget, i);
+                }
+            }
+        }
+        return shortTarget;
+    }
+}*/
+
+//A를 B로 만들기
+/*class Solution {
+    public int solution(String before, String after) {
+        char[] beforeArray = before.toCharArray();
+        char[] afterArray = after.toCharArray();
+
+        Arrays.sort(beforeArray);
+        Arrays.sort(afterArray);
+
+        if(Arrays.equals(beforeArray, afterArray))
+            return 1;
+        return 0;
+    }
+}*/
+
+//7의 개수
+/*class Solution {
+    public int solution(int[] array) {
+        StringBuilder sb = new StringBuilder();
+
+        for (int i : array)
+            sb.append(Integer.valueOf(i));
+
+        String newString = sb.toString();
+        int count = 0;
+        String[] split = newString.split("");
+        for (String s : split) {
+            if(s.equals("7")){
+                count++;
+            }
+        }
+        return count;
+    }
+}*/
+
+
