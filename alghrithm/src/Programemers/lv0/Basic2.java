@@ -5,6 +5,21 @@ import java.util.*;
 
 public class Basic2 {
     public static void main(String[] args) {
+        int[] arr = {30,10,23,6,100};
+        ArrayList<Integer> list = new ArrayList<>();
+        int count = arr.length;
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    --count;
+                }
+            }
+            list.add(count);
+            count = arr.length;
+        }
+        int[] array = list.stream().mapToInt(Integer::intValue).toArray();
+        System.out.println(Arrays.toString(array));
     }
 }
 
@@ -444,4 +459,82 @@ class Solution {
     }
 }*/
 
+//2차원으로 만들기
+/*class Solution {
+    public int[][] solution(int[] num_list, int n) {
+        int[][] tda = new int[num_list.length/n][n];
+        int index = 0;
 
+        for(int i = 0; i < num_list.length/n; ++i) {
+            for (int j = 0; j < n; j++) {
+                tda[i][j] = num_list[index++];
+            }
+        }
+        return tda;
+    }
+}*/
+
+//모스 부호(1)
+/*
+class Solution {
+    public String solution(String letter) {
+        Map<String, String> map = new HashMap<>();
+        map.put(".-","a");
+        map.put("-...","b");
+        map.put("-.-.","c");
+        map.put("-..","d");
+        map.put(".","e");
+        map.put("..-.","f");
+        map.put("--.","g");
+        map.put("....","h");
+        map.put("..","i");
+        map.put(".---","j");
+        map.put("-.-","k");
+        map.put(".-..","l");
+        map.put("--","m");
+        map.put("-.","n");
+        map.put("---","o");
+        map.put(".--.","p");
+        map.put("--.-","q");
+        map.put(".-.","r");
+        map.put("...","s");
+        map.put("-","t");
+        map.put("..-","u");
+        map.put("...-","v");
+        map.put(".--","w");
+        map.put("-..-","x");
+        map.put("-.--","y");
+        map.put("--..","z");
+
+        StringBuilder sb = new StringBuilder();
+        String[] split = letter.split(" ");
+
+        for (String s : split)
+            sb.append(map.get(s));
+
+        return sb.toString();
+
+    }
+}*/
+
+//진료순서 정하기
+/*class Solution {
+    public int[] solution(int[] emergency) {
+        ArrayList<Integer> list = new ArrayList<>();
+
+        int count = emergency.length;
+
+        for(int i = 0; i < emergency.length; ++i) {
+            for(int j = 0; j < emergency.length; ++j) {
+                if(emergency[i] > emergency[j])
+                    --count;
+            }
+            list.add(count);
+            count = emergency.length;
+        }
+
+        int[] array = list.stream().mapToInt(Integer::intValue).toArray();
+
+        return array;
+    }
+}*/
