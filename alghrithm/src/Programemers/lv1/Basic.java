@@ -125,4 +125,80 @@ class Solution {
     }
 }*/
 
+//약수의 합
+/*class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        int i = 0;
+
+        while(i != n) {
+            i++;
+            if(n % i == 0)
+                answer +=i;
+        }
+
+        return answer;
+    }
+}
+// 제곱근을 이용한 방법 시간복잡도가 O(rootN) 걸린다
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        int sqrt = (int)Math.sqrt(n);
+
+        for(int i = 1; i <=sqrt; i++){
+            if(n % i == 0) {
+                answer +=i;
+                if(i != n/i)
+                    answer +=n/i;
+            }
+
+        }
+        return answer;
+    }
+}
+*/
+
+//자릿수 더하기
+/*public class Solution {
+    public int solution(int n) {
+        int answer = 0;
+
+        while(n != 0) {
+            answer += n % 10;
+            n /=10;
+        }
+
+        return answer;
+    }
+}
+*/
+
+//평균 구하기
+/*class Solution {
+    public double solution(int[] arr) {
+        double answer = 0;
+
+        for(int i : arr) {
+            answer += i;
+        }
+
+        answer /= arr.length;
+
+        return answer;
+    }
+}*/
+
+//x만큼 간격이 있는 n개의 숫자
+/*class Solution {
+    public long[] solution(int x, int n) {
+        long[] answer = new long[n];
+        for(int i = 1; i <= n; i++) {
+            answer[i-1] = (long)(i) * x;
+        }
+        return answer;
+}*/
+
+
+
 

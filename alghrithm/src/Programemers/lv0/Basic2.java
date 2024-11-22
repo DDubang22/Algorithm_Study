@@ -1,28 +1,10 @@
 package Programemers.lv0;
 
-import java.util.*;
-
-
 public class Basic2 {
     public static void main(String[] args) {
-        int[] arr = {30,10,23,6,100};
-        ArrayList<Integer> list = new ArrayList<>();
-        int count = arr.length;
 
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                if (arr[i] > arr[j]) {
-                    --count;
-                }
-            }
-            list.add(count);
-            count = arr.length;
-        }
-        int[] array = list.stream().mapToInt(Integer::intValue).toArray();
-        System.out.println(Arrays.toString(array));
     }
 }
-
 
 //특정 문자 제거하기
 /*
@@ -536,5 +518,12 @@ class Solution {
         int[] array = list.stream().mapToInt(Integer::intValue).toArray();
 
         return array;
+    }
+}*/
+
+//flag에따라 다른 값 구하기
+/*class Solution {
+    public int solution(int a, int b, boolean flag) {
+        return flag ? a+b : a-b;
     }
 }*/
