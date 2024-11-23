@@ -4,6 +4,19 @@ import java.util.*;
 
 public class Basic {
     public static void main(String[] args) {
+        long n = 10_000_000_000L;
+        int[] answer;
+        ArrayList<Integer> list = new ArrayList<>();
+
+        while(n !=0) {
+            list.add((int) n % 10);
+            n /=10;
+        }
+        answer = new int[list.size()];
+        for(int i = 0; i < list.size(); i++) {
+            answer[i] = list.get(i);
+        }
+        System.out.println(Arrays.toString(answer));
     }
 }
 
@@ -200,5 +213,63 @@ class Solution {
 }*/
 
 
+//같은 숫자는 싫어
+/*public class Solution {
+    public int[] solution(int []arr) {
+        int[] answer ={};
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i < arr.length-1; i++) {
+            if (arr[i] != arr[i + 1]) {
+                list.add(arr[i]);
+            }
+        }
+        list.add(arr[arr.length - 1]);
+        return list.stream().mapToInt(Integer::intValue).toArray();
+    }
+}*/
 
+//문자열을 정수로 바꾸기
+/*class Solution {
+    public int solution(String s) {
+        return Integer.parseInt(s);
+    }
+}*/
+
+//문자열 내 p와 y의 개수
+/*class Solution {
+    boolean solution(String s) {
+        String lowercase = s.toLowerCase();
+        String s1 = lowercase.replaceAll("[^py]", "");
+        int pCount = 0;
+        int yCount = 0;
+
+        String[] split = s1.split("");
+        for (String str : split) {
+            if(str.equals("p")) pCount++;
+            else if (str.equals("y")) yCount++;
+        }
+
+        return pCount == yCount;
+    }
+}*/
+
+//자연수 뒤집어 배열로 만들기
+/*class Solution {
+    public int[] solution(long n) {
+        int[] answer;
+        ArrayList<Integer> list = new ArrayList<>();
+
+        while(n !=0) {
+            list.add((int)(n % 10));
+            n /=10;
+        }
+
+        answer = new int[list.size()];
+
+        for(int i = 0; i < list.size(); i++)
+            answer[i] = list.get(i);
+
+        return answer;
+    }
+}*/
 
