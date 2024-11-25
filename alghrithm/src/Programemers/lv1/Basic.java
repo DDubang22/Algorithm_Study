@@ -4,19 +4,7 @@ import java.util.*;
 
 public class Basic {
     public static void main(String[] args) {
-        long n = 10_000_000_000L;
-        int[] answer;
-        ArrayList<Integer> list = new ArrayList<>();
 
-        while(n !=0) {
-            list.add((int) n % 10);
-            n /=10;
-        }
-        answer = new int[list.size()];
-        for(int i = 0; i < list.size(); i++) {
-            answer[i] = list.get(i);
-        }
-        System.out.println(Arrays.toString(answer));
     }
 }
 
@@ -268,6 +256,28 @@ class Solution {
 
         for(int i = 0; i < list.size(); i++)
             answer[i] = list.get(i);
+
+        return answer;
+    }
+}*/
+
+//정수 내림차순으로 배치하기
+/*class Solution {
+    public long solution(long n) {
+        long answer = 0;
+        ArrayList<Long> list = new ArrayList<>();
+
+        while(n != 0) {
+            list.add((long)(n % 10));
+            n /= 10;
+        }
+
+        Collections.sort(list);
+        Collections.reverse(list);
+
+        for(int i = list.size() - 1; i >=0 ; i--) {
+            answer = answer + (list.get(i)* (long)Math.pow(10,list.size() -1 - i));
+        }
 
         return answer;
     }
