@@ -283,3 +283,18 @@ class Solution {
     }
 }*/
 
+
+//나머지가 1이 되는 수 찾기
+/*class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        int x = n - 1;
+
+        while(x > 0) {
+            if(n % x == 1)
+                answer = x;
+            x--;
+        }
+        return answer;
+    }
+}*/
