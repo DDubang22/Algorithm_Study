@@ -1,9 +1,6 @@
 package Programemers.lv1;
 
 public class Hash {
-    public static void main(String[] args) {
-        String[]
-    }
 }
 
 //폰켓몬

@@ -5,6 +5,16 @@ import java.util.*;
 
 public class Basic3 {
     public static void main(String[] args) {
+        int a = 91;
+        int b = 2;
+
+        String strA = String.valueOf(a);
+        String strB = String.valueOf(b);
+
+        int result = Integer.parseInt(strA + strB);
+        int result2 = 2 * a * b;
+
+        System.out.println(result > result2 ? result : result2);
 
     }
 }
@@ -75,5 +85,18 @@ public class Basic3 {
             }
             return 1;
         }
+    }
+}*/
+
+//두 수의 연산값 비교하기
+/*
+class Solution {
+    public int solution(int a, int b) {
+        String strA = String.valueOf(a);
+        String strB = String.valueOf(b);
+
+        int result = Integer.parseInt(strA + strB);
+        int result2 = 2 * a * b;
+        return Math.max(result, result2);
     }
 }*/

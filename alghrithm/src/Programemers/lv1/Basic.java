@@ -4,6 +4,25 @@ import java.util.*;
 
 public class Basic {
     public static void main(String[] args) {
+        int[] arr = {4,3,2,1};
+
+        Arrays.sort(arr);
+
+        int[] answer = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            answer[arr.length - i - 1] = arr[i];
+        }
+
+        if (answer.length == 1) {
+            answer[0] = -1;
+        }
+        else {
+            answer = Arrays.copyOfRange(answer, 0, answer.length - 1);
+        }
+
+        System.out.println(Arrays.toString(answer));
+
 
     }
 }
